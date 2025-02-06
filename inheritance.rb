@@ -40,7 +40,10 @@
 # Test your code by creating new instances and calling introduce.
 
 class Person
+  attr_accessor :name, :age
+
   def initialize(name, age)
+    raise ArgumentError, 'Age must be a positive number' if age < 0
     @name = name
     @age = age
   end
@@ -74,11 +77,15 @@ class Teacher < Person
   end
 end
 
-student = Student.new("Leon", 25, "12", "FD")
-puts student.introduce
+# person = Person.new("Jess", -1)
+# puts person.name
+# puts person.age
 
-teacher = Teacher.new("Charles", 26, "Computer Science", 50)
-puts teacher.introduce
+# student = Student.new("Leon", 25, "12", "FD")
+# puts student.introduce
+
+# teacher = Teacher.new("Charles", 26, "Computer Science", 50)
+# puts teacher.introduce
 
 
 
